@@ -1,5 +1,8 @@
+- _std::exception_ptr_, C++ Standart Kütüphanesi'nin bir bileşenidir.
+- Hataların daha esnek ve daha genelleştirilmiş bir şekilde yönetilmesine yardımcı olmak için _C++11_ Standardı ile dile eklenmiştir.
+
 <!--
-std::exception_ptr, C++ Standart Kütüphanesi'nin bir parçasıdır ve istisnaların daha esnek ve genelleştirilmiş bir şekilde yönetilmesine yardımcı olmak için C++11'de tanıtılmıştır. İstisnaları işlemek için çeşitli özellikler içeren C++ Standart İstisna kütüphanesinin bir parçasıdır.
+
 
 std::exception_ptr, "polimorfik istisna işaretçisini" temsil eden bir sınıftır. Genellikle istisnaları yakalamak ve farklı bir bağlamda yeniden atmak için diğer istisna işleme mekanizmalarıyla birlikte kullanılır. Birincil amacı, bir istisnayı daha sonra incelemek üzere saklamanıza veya kodunuzun farklı bir noktasında yeniden atmanıza olanak sağlamaktır.
 

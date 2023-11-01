@@ -15,13 +15,23 @@ void print_exception(const std::exception& e) {
     }
 }
 
-void bar()
+void baz()
 {
-    throw std::runtime_error("exception from bar");
+    throw std::runtime_error("exception from baz");
 }
 
 // throws an exception nested in another:
-void foo() 
+void bar() 
+{
+    try {
+        baz();
+    }
+    catch (const std::exception&) {
+        std::throw_with_nested(std::runtime_error("exception from bar"));
+    }
+}
+
+void foo()
 {
     try {
         bar();

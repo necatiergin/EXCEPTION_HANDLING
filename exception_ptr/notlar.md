@@ -1,8 +1,7 @@
 - _std::exception_ptr_, C++ Standart Kütüphanesi'nin bir bileşenidir.
 - Hataların daha esnek ve daha genelleştirilmiş bir şekilde yönetilmesine yardımcı olmak için _C++11_ Standardı ile dile eklenmiştir.
-
-_std::exception_ptr_, nesneleri _"polimorfik pointer"_ olarak kullanılan bir sınıftır. 
-- Genelliklehata nesnelerini yakalamak ve farklı bir bağlamda yeniden göndermek için diğer "exception handling" araçları ile birlikte kullanılır. 
+- _std::exception_ptr_, nesneleri _"polimorfik pointer"_ olarak kullanılan bir sınıftır. 
+- Genellikle hata nesnelerini yakalamak ve farklı bir bağlamda yeniden göndermek için diğer _"exception handling"_ araçları ile birlikte kullanılır. 
 - Birincil amacı, bir hata nesnesin daha sonra kullanmak üzere saklanmasına veya kodun farklı bir noktasında yeniden gönderilmesine olanak sağlamaktır.
 
 <!--

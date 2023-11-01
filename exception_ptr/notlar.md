@@ -4,20 +4,19 @@
 - Genellikle hata nesnelerini yakalamak ve farklı bir bağlamda yeniden göndermek için diğer _"exception handling"_ araçları ile birlikte kullanılır. 
 - Birincil amacı, bir hata nesnesin daha sonra kullanmak üzere saklanmasına veya kodun farklı bir noktasında yeniden gönderilmesine olanak sağlamaktır.
 
+_std::exception_ptr_'nin fayda sağlayabileceği bir senaryo örneği:
+
+Bir hata gönderebilecek bir kodumuz var ve bu hatayı hemen yakalamak ama daha sonra ele almak _(handle)_ istiyoruz.
+- hata gönderme potansiyelinde olan kodu bir tru bloğu içine alırız. 
+- hatayı yakalar ve hata nesnesini bir _std::exception_ptr_ nesnesine dönüştürürüz.
+
+Daha sonra bu _std::exception_ptr_ nesnesini  kodumuzun diğer bölümlerine, farklı bir _thread_'e ya da farklı bir fonkiyona aktarabiliriz.;
+- Hata nesnesini aktardığımız yerde daha sonra orijinal hata nesnesini yeniden gönderebiliriz.
+- Böyle hata nesnelerini loglayabilir hatta bir kapta _(container)_ tutabiliriz.
+
+_std::exception_ptr_'nin temel faydası, hata nesnelerinin işlenmesini geciktirmemize izin vermesi ve böylece hatanın gönderildiği orijinal bağlamın artık var olmadığı durumlarda bile hata bilgilerini kodun farklı bölümleri arasında taşımak için bir yol sağlamasıdır.
+
 <!--
-
-
-
-
-İşte std::exception_ptr'nin yararlı olabileceği tipik bir senaryo:
-
-Bir istisna fırlatabilecek bir kodunuz var ve bu istisnayı hemen ele almadan yakalamak istiyorsunuz.
-
-Potansiyel olarak fırlatılan kodu bir try-catch bloğuna sarar, istisnayı yakalar ve bir std::exception_ptr'ye dönüştürürsünüz.
-
-Daha sonra bu std::exception_ptr'yi kodunuzun diğer bölümlerine, belki de farklı bir iş parçacığına veya farklı bir işleve aktarabilirsiniz; burada daha sonra orijinal istisnayı yeniden atabilir veya istisnayı günlüğe kaydetmek veya istisna türüne göre bir karar vermek gibi başka eylemler gerçekleştirebilirsiniz.
-
-std::exception_ptr'nin temel faydası, istisnaların işlenmesini geciktirmenize izin vermesi ve istisnanın atıldığı orijinal bağlamın artık mevcut olmadığı durumlarda bile istisna bilgilerini kodunuzun farklı bölümleri arasında taşımak için bir yol sağlamasıdır.
 -->
 
 

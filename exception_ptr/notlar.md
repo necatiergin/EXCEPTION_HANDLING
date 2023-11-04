@@ -7,7 +7,7 @@
 _std::exception_ptr_'nin fayda sağlayabileceği bir senaryo örneği:
 
 Bir hata gönderebilecek bir kodumuz var ve bu hatayı hemen yakalamak ama daha sonra ele almak _(handle)_ istiyoruz.
-- hata gönderme potansiyelinde olan kodu bir tru bloğu içine alırız. 
+- hata gönderme potansiyelinde olan kodu bir try bloğu içine alırız. 
 - hatayı yakalar ve hata nesnesini bir _std::exception_ptr_ nesnesine dönüştürürüz.
 
 Daha sonra bu _std::exception_ptr_ nesnesini  kodumuzun diğer bölümlerine, farklı bir _thread_'e ya da farklı bir fonkiyona aktarabiliriz.;

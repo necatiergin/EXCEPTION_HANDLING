@@ -21,7 +21,7 @@ int main()
 {
 	try {
 		Myclass mx(12);  
-		//destructor cagrilmayacak
+		//destructor will not be called
 	}
 	catch (const std::exception& ex) {
 		std::cout << "exception caught: " << ex.what() << '\n';

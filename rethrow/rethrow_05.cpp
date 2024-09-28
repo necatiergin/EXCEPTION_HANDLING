@@ -1,4 +1,4 @@
-//yakaladığımız hata nesnesini değiştirip (set edip) onu yeniden gönderebiliriz (rethrow edebiliriz.)
+// We can set an exception object we caught and we can rethrow it.
 
 #include <string>
 

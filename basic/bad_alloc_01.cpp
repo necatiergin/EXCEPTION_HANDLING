@@ -3,7 +3,7 @@
 #include <exception>
 
 class Buffer {
-	constexpr static auto size{ 1'024u* 1'024u};
+	constexpr static auto size{ 1'024u * 1'024u };
 	char mbuffer[size];
 };
 
@@ -18,7 +18,7 @@ int main()
 		}
 	}
 	catch (const std::bad_alloc& ex) {
-		std::cout << "\nexception caught : " << ex.what() << "\n";
-		std::cout << "size = " << bvec.size() << "\n";
+		std::cout << "\nexception caught : " << ex.what() << '\n';
+		std::cout << "size = " << bvec.size() << '\n';
 	}
 }

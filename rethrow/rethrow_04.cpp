@@ -1,5 +1,4 @@
-//bir exception handle edilmediğinde rethrow statement yürütülürse std::terminate işlevi çağrılır.
-
+//std::terminate is called if a rethrow statement isevaluated when no exception is being handled.
 
 #include <iostream>
 
@@ -13,7 +12,6 @@ void func()
 {
 	throw;
 }
-
 
 int main()
 {

@@ -1,6 +1,3 @@
-//Bu örnek noexcept operatörü ile ilgilidir.
-//noexcept operatörü noexcept belirteci (specifier) ile karıştırılmamalı
-
 #include <iostream>
 
 void f1();
@@ -17,11 +14,11 @@ public:
 int main()
 {
 	std::cout << std::boolalpha;
-	std::cout << noexcept(f1()) << "\n";
-	std::cout << noexcept(f2()) << "\n";
-	std::cout << noexcept(fx()) << "\n";
-	std::cout << noexcept(fy()) << "\n";
-	std::cout << noexcept(Nec{}) << "\n";
-	std::cout << noexcept(std::declval<Nec>().~Nec()) << "\n";
+	std::cout << noexcept(f1()) << '\n';
+	std::cout << noexcept(f2()) << '\n';
+	std::cout << noexcept(fx()) << '\n';
+	std::cout << noexcept(fy()) << '\n';
+	std::cout << noexcept(Nec{}) << '\n';
+	std::cout << noexcept(std::declval<Nec>().~Nec()) << '\n';
 	constexpr auto flag = noexcept(fx()); //gecerli
 }

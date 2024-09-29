@@ -5,8 +5,8 @@ struct Base {
 	virtual ~Base() = default;
 };
 
-class Nec: public Base {};
-class Erg: public Base {};
+class Nec : public Base {};
+class Erg : public Base {};
 
 int main()
 {
@@ -14,10 +14,10 @@ int main()
 	Base& baseref{ nec };
 
 	try {
-		Erg& e = dynamic_cast<Erg&>(baseref);
+		[[maybe-unused]] Erg& e = dynamic_cast<Erg&>(baseref);
 	}
 	catch (const std::bad_cast& ex) {
-	//catch (const std::exception& ex) {
+		//catch (const std::exception& ex) {
 		std::cout << "exception caught: " << ex.what() << '\n';
 	}
 

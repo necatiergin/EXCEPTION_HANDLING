@@ -1,4 +1,5 @@
 #include <iostream>
+#include <typeinfo>
 
 struct Base {
 	virtual ~Base() = default;

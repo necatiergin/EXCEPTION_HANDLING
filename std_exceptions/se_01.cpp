@@ -1,3 +1,5 @@
+//bad_typeid
+
 #include <typeinfo>
 #include <iostream>
 
@@ -28,5 +30,4 @@ int main()
 	catch (const std::bad_typeid& ex) {
 		std::cout << "exception caught: " << ex.what() << '\n';
 	}
-
 }

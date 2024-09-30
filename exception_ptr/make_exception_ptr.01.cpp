@@ -5,7 +5,7 @@
 int main()
 {
     //...
-    auto p = std::make_exception_ptr(std::range_error("aralik disi deger"));
+    auto p = std::make_exception_ptr(std::range_error("value - out of range"));
 
     //...
     try {

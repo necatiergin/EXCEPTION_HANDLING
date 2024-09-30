@@ -16,6 +16,29 @@ Daha sonra bu _std::exception_ptr_ nesnesini  kodumuzun diğer bölümlerine, fa
 
 _std::exception_ptr_'nin temel faydası, hata nesnelerinin işlenmesini geciktirmemize izin verir ve böylece hatanın gönderildiği orijinal bağlamın artık var olmadığı durumlarda bile hata bilgilerini kodun farklı bölümleri arasında taşımak için bir yol sağlar.
 
+_make_exception_ptr_ bir fonksiyon şablonu.
+```
+template <class E>
+exception_ptr make_exception_ptr (E e) noexcept;
+```
+
+Fonksiyon kendisine gönderilen _exception_'dan bir _std::exception_ptr_ nesnesi oluşturarak onu döndürüyor. 
+Fonksiyon şablonunun kodunun aşağıdaki gibi olduğu düşünülebilir:
+
+```
+template <class E>
+exception_ptr make_exception_ptr (E e) noexcept
+{
+  try {
+     throw e;
+  } catch(...) {
+     return current_exception();
+  }
+}
+```
+
+
+
 <!--
 -->
 

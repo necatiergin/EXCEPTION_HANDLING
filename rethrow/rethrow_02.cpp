@@ -8,8 +8,8 @@ void func()
 		throw std::out_of_range{ "range hatasi" };
 	}
 	catch (const std::exception& ex) {
-		std::cout << "hata func icinde yakalandi : " << ex.what() << "\n";
-		//iki farklı throw statement arasındaki farkı görünüz.
+		std::cout << "exception caught in func : " << ex.what() << "\n";
+		//see the difference between two throw statement.
 		throw ex;
 		//throw; 
 	}
@@ -22,10 +22,10 @@ int main()
 		func();
 	}
 	catch (const std::out_of_range&) {
-		std::cout << "hata yakalandi  (std::out_of_range)\n";
+		std::cout << "exception caught:  (std::out_of_range)\n";
 	}
 
 	catch (const std::exception&) {
-		std::cout << "hata yakalandi (std::exception)\n";
+		std::cout << "exception caught: (std::exception)\n";
 	}
 }

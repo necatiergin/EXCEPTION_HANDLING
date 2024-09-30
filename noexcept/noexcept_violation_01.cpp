@@ -12,8 +12,8 @@ void foo()noexcept
 	func();
 }
 
-// foo fonksiyonu noexcept olarak nitelendiğinden çalışma zamanında exception gönderdiğinde
-//derleyici terminate işlevini çağıracak. Yani aşağıdaki kodda exception yakalanamayacak.
+// as function foo is noexcept specified when it throws an exception the compiler will call std::terminate 
+// the exception thrown in the following code would not be caught.
 
 void my_terminate(void)
 {

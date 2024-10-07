@@ -11,5 +11,5 @@ private:
 
 int main()
 {
-	const auto b = std::is_nothrow_copy_constructible_v<Myclass>;
+	constexpr auto b = std::is_nothrow_copy_constructible_v<Myclass>;
 }

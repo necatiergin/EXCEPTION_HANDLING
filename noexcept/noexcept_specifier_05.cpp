@@ -6,5 +6,5 @@ public:
 
 class Der : public Base {
 public:
-	void func()noexcept override; //gecerli
+	void func()noexcept override; //valid
 };

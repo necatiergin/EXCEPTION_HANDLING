@@ -1,11 +1,12 @@
 class Base {
 public:
-	virtual void func()noexcept;
+	virtual void foo()noexcept;
+	virtual void bar();
 };
-
 
 class Der : public Base {
 public:
-	//void func()override; //gecersiz
-	void func()noexcept override; //gecerli
+	//void foo()override; //invalid
+	void foo()noexcept override; //valid
+	void bar()noexcept override; //valid
 };

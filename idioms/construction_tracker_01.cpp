@@ -3,21 +3,21 @@
 #include <cassert>
 
 struct X {
-    X(const char *) 
+    X(const char*)
     {
-        throw std::runtime_error("X Error"); 
+        //throw std::runtime_error("X Error");
     }
 };
 
 struct Y {
-    Y(const char *) 
+    Y(const char*)
     {
         throw std::runtime_error("Y Error");
     }
 };
 
 struct Z {
-    Z(const char *)
+    Z(const char*)
     {
         throw std::runtime_error("Z Error");
     }
@@ -27,7 +27,7 @@ class Nec {
     X ma;
     Y mb;
     Z mc;
-    enum TrackerType {NONE, ONE, TWO, THREE};
+    enum TrackerType { NONE, ONE, TWO, THREE };
 public:
     Nec(TrackerType tracker = NONE)
         try    // X constructor try block.
@@ -41,13 +41,13 @@ public:
     catch (std::exception const& e)
     {
         if (tracker == ONE) {
-            std::cout << "X threw: " << e.what() << std::endl;
+            std::cout << "X threw: " << e.what() << '\n';
         }
         else if (tracker == TWO) {
-            std::cout << "Y threw: " << e.what() << std::endl;
+            std::cout << "Y threw: " << e.what() << '\n';
         }
         else if (tracker == THREE) {
-            std::cout << "Z threw: " << e.what() << std::endl;
+            std::cout << "Z threw: " << e.what() << '\n';
         }
 
         throw;
@@ -60,7 +60,7 @@ int main(void)
         Nec mynec;
     }
     catch (std::exception const& e) {
-        std::cout << "exception caught: " << e.what() << std::endl;
+        std::cout << "exception caught: " << e.what() << '\n';
     }
-    
+
 }

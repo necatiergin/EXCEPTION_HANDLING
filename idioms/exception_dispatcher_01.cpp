@@ -1,17 +1,16 @@
-//exception dispatcher
-//önemli bir exception idiyomu
+#include <iostream>
 
-class NecException {
-
+class XException {
+	//...
 };
 
 
-class ErgException {
-
+class YException {
+	//...
 };
 
-class CSDException {
-
+class ZException {
+	//...
 };
 
 
@@ -21,24 +20,52 @@ void handle_exception()
 	try {
 		throw;
 	}
-	catch (NecException& e) {
-		
+	catch (const XException &) {
+		std::cout << "X exception caught\n";
 	}
-	catch (ErgException& e) {
-		
+	catch (const YException&) {
+		std::cout << "Y exception caught\n";
 	}
-	catch (CSDException & e) {
-
+	catch (const ZException&) {
+		std::cout << "Z exception caught\n";
 	};
 }
 
 
-void func()
+void foo()
 {
 	try {
-		// hata 
+		throw XException{};
 	}
 	catch (...) {
 		handle_exception();
 	}
+}
+
+void bar()
+{
+	try {
+		throw YException{};
+	}
+	catch (...) {
+		handle_exception();
+	}
+}
+
+
+void baz()
+{
+	try {
+		throw ZException{};
+	}
+	catch (...) {
+		handle_exception();
+	}
+}
+
+int main()
+{
+	foo();
+	bar();
+	baz();
 }

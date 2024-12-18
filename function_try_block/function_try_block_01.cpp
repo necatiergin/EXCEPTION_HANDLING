@@ -18,7 +18,7 @@ public:
 	catch (const std::exception& ex)
 	{
 		std::cout << "exception caught : " << ex.what() << '\n';
-		// if no exception thrown in the catch block compiler adds a rethtow atement
+		// if no exception thrown in the catch block compiler adds a rethtow statement
 		// uncomment and recompile
 		//throw std::runtime_error{ "error from owner ctor" };
 	}

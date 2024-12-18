@@ -6,17 +6,12 @@
 std::vector<std::exception_ptr> g_ex_vec;
 std::mutex g_mutex;
 
-void f1()
-{
-	throw std::exception{ "exception from f1" };
-}
-//----------------------------------------------------------------------------------------------------
-void f2()
-{
-	throw std::exception{ "exception from f2" };
-}
-//----------------------------------------------------------------------------------------------------
-void th_func1()
+void f1() {	throw std::runtime_error{ "exception from f1" };}
+void f2() {	throw std::runtime_error{ "exception from f2" };}
+void f3() {	throw std::runtime_error{ "exception from f3" };}
+
+
+void th_f1()
 {
 	try {
 		f1();
@@ -27,7 +22,7 @@ void th_func1()
 	}
 }
 //----------------------------------------------------------------------------------------------------
-void th_func2()
+void th_f2()
 {
 	try {
 		f2();
@@ -37,22 +32,33 @@ void th_func2()
 		g_ex_vec.push_back(std::current_exception());
 	}
 }
+
+void th_f3()
+{
+	try {
+		f3();
+	}
+	catch (...) {
+		std::lock_guard<std::mutex> guard{ g_mutex };
+		g_ex_vec.push_back(std::current_exception());
+	}
+}
 //----------------------------------------------------------------------------------------------------
 int main()
 {
-	std::thread t1(th_func1);
-	std::thread t2(th_func2);
+	{
+		std::jthread t1(th_f1);
+		std::jthread t2(th_f2);
+		std::jthread t3(th_f2);
+	}
 
-	t1.join();
-	t2.join();
-
-	for (auto const &ex : g_ex_vec) {
+	for (auto const& ex : g_ex_vec) {
 		try
 		{
 			if (ex != nullptr)
 				std::rethrow_exception(ex);
 		}
-		catch (std::exception const & ex)
+		catch (std::exception const& ex)
 		{
 			std::cout << "exception caught: " << ex.what() << '\n';
 		}

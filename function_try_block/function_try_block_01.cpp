@@ -17,7 +17,7 @@ public:
 	}
 	catch (const std::exception& ex)
 	{
-		std::cout << "hata yakalandi: " << ex.what() << '\n';
+		std::cout << "exception caught : " << ex.what() << '\n';
 		// if no exception thrown in the catch block compiler adds a rethtow atement
 		// uncomment and recompile
 		//throw std::runtime_error{ "error from owner ctor" };
@@ -33,6 +33,6 @@ int main()
 		Owner ox;
 	}
 	catch (const std::exception& ex) {
-		std::cout << "hata yakalandi : " << ex.what() << '\n';
+		std::cout << "exception caught in main : " << ex.what() << '\n';
 	}
 }

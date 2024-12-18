@@ -18,9 +18,8 @@ public:
 	catch (const std::exception& ex)
 	{
 		std::cout << "hata yakalandi: " << ex.what() << '\n';
-		// function try bloğunu izleyen catch bloğu içinde eğer exception
-		// gonderilmez ise derleyici bloğun sonuna rethrow statement ekliyor
-		//yorum satirindan cikartip tekrar derleyin
+		// if no exception thrown in the catch block compiler adds a rethtow atement
+		// uncomment and recompile
 		//throw std::runtime_error{ "error from owner ctor" };
 	}
 private:

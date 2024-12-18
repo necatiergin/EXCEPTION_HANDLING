@@ -2,6 +2,11 @@
 #include <exception>  
 #include <stdexcept>  
 
+void foo(std::exception_ptr eptr)
+{
+    //...
+    std::rethrow_exception(eptr);
+}
 int main()
 {
     //...
@@ -9,9 +14,9 @@ int main()
 
     //...
     try {
-        std::rethrow_exception(p);
+        foo(p);
     }
     catch (const std::exception& e) {
-        std::cout << "hata yakalandi: " << e.what() << '\n';
+        std::cout << "exception caught: " << e.what() << '\n';
     }
 }

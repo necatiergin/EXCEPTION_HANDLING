@@ -1,7 +1,7 @@
 void bar();
 void baz();
 
-// no exception gurantee 
+// no exception guArantee 
 // foo may leak resource if new expression throws bad allovc
 
 void foo(int n)

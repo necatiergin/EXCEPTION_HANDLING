@@ -10,10 +10,8 @@ void my_terminate(void)
 
 int main()
 {
-	using namespace std;
-	
-	set_terminate(my_terminate);
-	string str{ "necati ergin" };
+	std::set_terminate(my_terminate);
+	std::string str{ "necati ergin" };
 
 	auto c = str.at(20);
 }

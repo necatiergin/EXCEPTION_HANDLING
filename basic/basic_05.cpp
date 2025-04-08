@@ -9,9 +9,7 @@ void my_terminate(void)
 
 int main()
 {
-	using namespace std;
-	
-	set_terminate(my_terminate);
+	std::set_terminate(my_terminate);
 
 	auto fg = get_terminate();
 

@@ -1,5 +1,8 @@
+// if an empty exception_ptr is thrown by std::rethrow_exception
+// std::bad_exception is thrown 
+
 #include <iostream>
-#include <type_traits>
+#include <exception>
 
 int main()
 {
